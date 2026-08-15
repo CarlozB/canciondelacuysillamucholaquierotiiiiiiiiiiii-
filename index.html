@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b0b">
+  <meta name="description" content="Una canción hecha especialmente para ti.">
+  <title>Para ti ♡</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =========================================================
+       PANTALLA DE INTRO
+       ========================================================= -->
+  <section id="welcomeScreen" class="welcome-screen">
+    <div class="welcome-content">
+      <p class="eyebrow">Tengo algo para ti Cuy</p>
+      <h1>Una canciónsita<br><span>hecha para ti.</span></h1>
+      <p class="welcome-text">No quería simplemente mandártela por whatsapp.</p>
+      <button id="openButton" class="primary-button">Abrir <span>♡</span></button>
+    </div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+  </section>
+
+  <!-- =========================================================
+       APP / REPRODUCTOR
+       ========================================================= -->
+  <main id="playerScreen" class="app hidden">
+
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">♡</div>
+        <span>Para ti</span>
+      </div>
+
+      <nav class="main-nav">
+        <button class="nav-item active">
+          <img src="assets/icon-home.svg" alt="" class="icon">
+          <span>Inicio</span>
+        </button>
+        <button class="nav-item">
+          <img src="assets/icon-heart.svg" alt="" class="icon">
+          <span>Tu canción</span>
+        </button>
+      </nav>
+
+      <div class="playlist-title">
+        <span>Tu biblioteca</span>
+      </div>
+
+      <div class="mini-playlist">
+        <img src="assets/portada.jpg" alt="Portada">
+        <div>
+          <strong id="sideSongTitle">Para ti</strong>
+          <span>Una canción especial</span>
+        </div>
+      </div>
+
+      <div class="sidebar-bottom">
+        <span>Hecho especialmente para ti</span>
+      </div>
+    </aside>
+
+    <section class="content">
+      <header class="topbar">
+        <button class="mobile-brand">
+          <span class="brand-mark">♡</span>
+          <span>Para ti</span>
+        </button>
+        <button id="mobileHeart" class="mobile-heart" aria-label="Me gusta">
+          <img src="assets/icon-heart.svg" alt="">
+        </button>
+      </header>
+
+      <div class="content-scroll">
+        <div class="hero">
+          <div class="hero-cover-wrap">
+            <div class="cover-glow"></div>
+            <img id="cover" class="hero-cover" src="assets/portada.jpg" alt="Portada de la canción">
+          </div>
+
+          <div class="hero-info">
+            <p class="type-label">CANCIÓN</p>
+            <h2 id="songTitle">Para ti</h2>
+            <p class="artist" id="artistName">Carlos</p>
+            <p class="description" id="dedicationText">Esta canción es para ti mi cuysilla</p>
+            <div class="hero-actions">
+              <button id="heroPlay" class="round-play" aria-label="Reproducir">
+                <img id="heroPlayIcon" src="assets/icon-play.svg" alt="">
+              </button>
+              <button id="heroHeart" class="action-icon" aria-label="Me gusta">
+                <img src="assets/icon-heart.svg" alt="">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="track-list">
+          <div class="track-list-head">
+            <span>#</span>
+            <span>Título</span>
+            <span>Duración</span>
+          </div>
+
+          <button id="trackRow" class="track-row">
+            <span class="track-number" id="trackNumber">1</span>
+            <img class="track-thumb" src="assets/portada.jpg" alt="">
+            <span class="track-name">
+              <strong id="trackTitle">Para ti</strong>
+              <small id="trackArtist">Carlos</small>
+            </span>
+            <span class="track-duration" id="trackDuration">0:00</span>
+          </button>
+        </div>
+
+        <div class="bottom-note">
+          <span>♡</span>
+          <p>Una canción para mi cuy</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         BARRA INFERIOR DEL REPRODUCTOR
+         ======================================================= -->
+    <footer class="player-bar">
+      <div class="now-playing">
+        <img id="nowPlayingCover" src="assets/portada.jpg" alt="">
+        <div>
+          <strong id="nowPlayingTitle">Para ti</strong>
+          <span id="nowPlayingArtist">Carlos</span>
+        </div>
+        <button id="nowPlayingHeart" class="tiny-heart" aria-label="Me gusta">
+          <img src="assets/icon-heart.svg" alt="">
+        </button>
+      </div>
+
+      <div class="player-center">
+        <div class="player-controls">
+          <button id="restartButton" class="player-control" aria-label="Reiniciar">
+            <img src="assets/icon-restart.svg" alt="">
+          </button>
+          <button id="playButton" class="main-play" aria-label="Reproducir">
+            <img id="playIcon" src="assets/icon-play.svg" alt="">
+          </button>
+          <button id="muteButton" class="player-control" aria-label="Silenciar">
+            <img id="volumeIcon" src="assets/icon-volume.svg" alt="">
+          </button>
+        </div>
+
+        <div class="progress-line">
+          <span id="currentTime">0:00</span>
+          <input id="progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Progreso">
+          <span id="duration">0:00</span>
+        </div>
+      </div>
+
+      <div class="player-right">
+        <span class="made-for">Para la cuy</span>
+      </div>
+    </footer>
+
+    <audio id="audio" preload="metadata">
+      <source src="assets/cancion.wav" type="audio/wav">
+      <!-- Si conviertes a MP3, cambia la línea anterior a cancion.mp3 -->
+    </audio>
+
+    <!-- MENSAJE FINAL -->
+    <div id="endMessage" class="end-message">
+      <div class="end-inner">
+        <img class="end-cover" src="assets/portada.jpg" alt="">
+        <p class="end-label">Dime que te gusto</p>
+        <h2>ti?</h2>
+        <p id="endText">Espero que puedas sentir en ella todo lo que quería decirte.</p>
+        <button id="replayButton" class="primary-button">Escuchar otra vez</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
